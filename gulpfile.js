@@ -17,9 +17,9 @@ elixir(function(mix) {
     var bootstrapPath = 'node_modules/bootstrap-sass/assets';
 
 
-    mix.browserSync({
-        proxy: 'moat.local'
-    });
+    // mix.browserSync({
+    //     proxy: 'moat.local'
+    // });
 
     mix.sass('style.scss')
         .copy(bootstrapPath + '/fonts', 'public/fonts');

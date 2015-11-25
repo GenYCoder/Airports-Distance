@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Airport App</title>
+    <title>Airport Distance Measure</title>
     <!-- Bootstrap -->
     <link href="css/style.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -18,27 +18,28 @@
 </head>
 
 <body ng-app="airportApp">
-    <div class="container" ng-controller="airportApp.controller">
+    <div class="container" ng-controller="airportApp.controller" ng-cloak>
         <div class="col-xs-12">
             <h1>Airport Distance</h1>
             <p class="lead">Measuring the distance between two airports in United States</p>
         </div>
         <div class="col-xs-12">
-            <form>
+            <form name="airportForm">
                 <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <label for="From">From:</label><input type="text" class="form-control" id="From">
+                    <h4>From:</h4>
+                    <angucomplete-alt id="airportA" placeholder="Enter an airport name" pause="500" selected-object="airportA" remote-url="/json/airports?query=" search-field="ap_name, ap_city, ap_agency_code" remote-url-data-field description-field="ap_agency_code" title-field="ap_name" auto-match="true" minlength="1" input-class="form-control" match-class="highlight" />
                 </div>
                 <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <label for="To">To:</label>
-                    <input type="text" class="form-control" id="To">
+                    <h4>To:</h4>
+                    <angucomplete-alt id="airportB" placeholder="Enter an airport name" pause="500" selected-object="airportB" remote-url="/json/airports?query=" search-field="ap_name, ap_city, ap_agency_code" remote-url-data-field description-field="ap_agency_code" title-field="ap_name" auto-match="true" minlength="1" input-class="form-control" match-class="highlight" />
                 </div>
             </form>
-            <div><p>RESULT:</p></div>
+        </div>
+        <div class="col-xs-12">
+            <p class="lead" ng-show="distanceResult != null">The distance between <strong>{{airportA.title}} ({{airportA.description}})</strong> and <strong>{{airportB.title}} ({{airportB.description}})</strong> is <strong>{{distanceResult}} nautical mile</strong></p>
         </div>
         <div id="usa-map" class="col-xs-12">
-        	
         </div>
-
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

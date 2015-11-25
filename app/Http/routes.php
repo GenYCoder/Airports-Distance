@@ -12,6 +12,6 @@
 */
 
 
-Route::get('json', 'apiController@index');
+Route::get('json/airports', 'apiController@index');
 
 
