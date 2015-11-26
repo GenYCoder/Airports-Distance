@@ -18,30 +18,34 @@
 </head>
 
 <body ng-app="airportApp">
-    <div class="container" ng-controller="airportApp.controller" ng-cloak>
-        <div class="col-xs-12">
-            <h1>United States Airports Distance</h1>
-            <p class="lead">Measuring the distance between two airports</p>
-        </div>
-        <div class="col-xs-12">
-            <form name="airportForm">
-                <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <h4>From:</h4>
-                    <angucomplete-alt id="airportA" placeholder="Enter an airport name" pause="500" selected-object="airportA" remote-url="/json/airports?query=" search-field="ap_name, ap_agency_code" remote-url-data-field description-field="ap_agency_code" title-field="ap_name" auto-match="true" minlength="1" input-class="form-control" match-class="highlight" />
+    <div class="mainBG">
+        <div class="container" ng-controller="airportApp.controller" ng-cloak>
+            <div class="col-xs-12">
+                <div class="col-xs-12">
+                    <h1 class="text-white">United States Airports Distance</h1>
+                    <p class="lead text-white">Measuring the distance between two airports</p>
                 </div>
-                <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <h4>To:</h4>
-                    <angucomplete-alt id="airportB" placeholder="Enter an airport name" pause="500" selected-object="airportB" remote-url="/json/airports?query=" search-field="ap_name, ap_city, ap_agency_code" remote-url-data-field description-field="ap_agency_code" title-field="ap_name" auto-match="true" minlength="1" input-class="form-control" match-class="highlight" />
+                <div class="col-xs-12">
+                    <form name="airportForm">
+                        <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                            <h4 class="text-white">From:</h4>
+                            <angucomplete-alt id="airportA" placeholder="Enter an airport name" pause="500" selected-object="airportA" remote-url="/json/airports?query=" search-field="ap_name, ap_agency_code" remote-url-data-field description-field="ap_agency_code" title-field="ap_name" auto-match="true" minlength="1" input-class="form-control" match-class="highlight" />
+                        </div>
+                        <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                            <h4 class="text-white">To:</h4>
+                            <angucomplete-alt id="airportB" placeholder="Enter an airport name" pause="500" selected-object="airportB" remote-url="/json/airports?query=" search-field="ap_name, ap_city, ap_agency_code" remote-url-data-field description-field="ap_agency_code" title-field="ap_name" auto-match="true" minlength="1" input-class="form-control" match-class="highlight" />
+                        </div>
+                    </form>
                 </div>
-            </form>
-        </div>
-        <div class="col-xs-12">
-            <p class="lead" ng-show="distanceResult != null">The distance between <strong>{{airportA.title}} <span ng-hide="airPortA.description == null">({{airportA.description}})</span></strong> and <strong>{{airportB.title}} <span ng-hide="airPortB.description == null">({{airportB.description}})</span></strong> is <strong>{{distanceResult}} nautical mile</strong></p>
-        </div>
-        <div id="mapCanvas" class="col-xs-12">
-            <ui-gmap-google-map center='map.center' zoom='map.zoom'>
-                <ui-gmap-polyline ng-repeat="p in polylines" path="p.path" stroke="p.stroke" visible="p.visible" geodesic="p.geodesic" fit="p.fit" icons="p.icons"></ui-gmap-polyline>
-            </ui-gmap-google-map>
+                <div class="col-xs-12">
+                    <p class="lead text-white" ng-show="distanceResult != null">The distance between <strong>{{airportA.title}} <span ng-hide="airPortA.description == null">({{airportA.description}})</span></strong> and <strong>{{airportB.title}} <span ng-hide="airPortB.description == null">({{airportB.description}})</span></strong> is <strong>{{distanceResult}} nautical mile</strong></p>
+                </div>
+                <div id="mapCanvas" class="col-xs-12">
+                    <ui-gmap-google-map center='map.center' zoom='map.zoom'>
+                        <ui-gmap-polyline ng-repeat="p in polylines" path="p.path" stroke="p.stroke" visible="p.visible" geodesic="p.geodesic" fit="p.fit" icons="p.icons"></ui-gmap-polyline>
+                    </ui-gmap-google-map>
+                </div>
+            </div>
         </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

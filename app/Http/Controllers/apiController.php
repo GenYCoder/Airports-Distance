@@ -23,7 +23,7 @@ class apiController extends Controller
 			
 			return $airports::where('ap_name','like', $searchTerm . '%')
 					->orWhere('ap_agency_code', 'like', $searchTerm . '%')
-					->take(10)
+					->take(6)
 					->get();
 			
 		}
