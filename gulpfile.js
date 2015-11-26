@@ -16,7 +16,6 @@ var elixir = require('laravel-elixir');
 elixir(function(mix) {
     var bootstrapPath = 'node_modules/bootstrap-sass/assets';
 
-
     // mix.browserSync({
     //     proxy: 'moat.local'
     // });

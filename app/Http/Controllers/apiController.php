@@ -21,7 +21,8 @@ class apiController extends Controller
 		{
 			$searchTerm = Input::get('query');
 			
-			return $airports::where('ap_name','like','%' . $searchTerm . '%')
+			return $airports::where('ap_name','like', $searchTerm . '%')
+					->orWhere('ap_agency_code', 'like', $searchTerm . '%')
 					->take(10)
 					->get();
 			

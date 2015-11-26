@@ -4,8 +4,10 @@
     "angucomplete-alt": "^2.1.0",
     "angular": "^1.4.8",
     "angular-google-maps": "^2.2.1",
+    "angular-simple-logger": "^0.1.5",
     "gulp": "^3.8.8",
-    "laravel-elixir-ng-annotate": "^1.0.1"
+    "laravel-elixir-ng-annotate": "^1.0.1",
+    "lodash": "^3.10.1"
   },
   "dependencies": {
     "laravel-elixir": "^3.0.0",
