@@ -16,9 +16,9 @@ angular.module("airportApp", ["angucomplete-alt", "uiGmapgoogle-maps"])
     }])
     .controller("airportApp.controller", ["$scope", "$http", "uiGmapGoogleMapApi", function($scope, $http, uiGmapGoogleMapApi) {
 
-        $scope.distanceResult = null;
-        $scope.polylines = [];
-        $scope.map = {};
+        $scope.distanceResult = null; //results of the two points
+        $scope.polylines = []; //controls the lines
+        $scope.map = {}; //controls how the map is display
 
 
         //watches if user selected a airport point
@@ -47,7 +47,7 @@ angular.module("airportApp", ["angucomplete-alt", "uiGmapgoogle-maps"])
                 //plotting the line between the two airports
                 uiGmapGoogleMapApi.then(function() {
 
-                    
+                    //start plotting the line between the two points
                     $scope.polylines = [{
                         id: 1,
                         path: [{

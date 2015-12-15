@@ -11,7 +11,7 @@
 }
 
 .angucomplete-dropdown {
-    border-color: #ececec;
+    border-color: black;
     border-width: 1px;
     border-style: solid;
     border-radius: 2px;
@@ -24,7 +24,7 @@
     left: 0px;
     */
     margin-top: 0px;
-    background-color: #ffffff;
+    background-color: rgba(48,54,61,0.95);
 }
 
 .angucomplete-searching {
@@ -38,13 +38,13 @@
 
 .angucomplete-row {
     padding: 5px;
-    color: #000000;
+    color: #FFF;
     margin-bottom: 4px;
 
 }
 
 .angucomplete-selected-row, .angucomplete-row:hover {
-    background-color: lightblue;
+    background-color: rgba(255,255,255,0.1);
     color: #ffffff;
 }
 

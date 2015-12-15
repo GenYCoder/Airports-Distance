@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Airport Distance Measure</title>
+    <title>Airport Distance Measuring App</title>
     <!-- Bootstrap -->
     <link href="css/style.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -38,9 +38,10 @@
                     </form>
                 </div>
                 <div class="col-xs-12">
-                    <p class="lead text-white" ng-show="distanceResult != null">The distance between <strong>{{airportA.title}} <span ng-hide="airPortA.description == null">({{airportA.description}})</span></strong> and <strong>{{airportB.title}} <span ng-hide="airPortB.description == null">({{airportB.description}})</span></strong> is <strong>{{distanceResult}} nautical mile</strong></p>
+                    <p class="lead text-white" ng-show="distanceResult != null && airportA.title != null && airportB.title != null">From <strong>{{airportA.title}} <span ng-hide="airPortA.description == null">({{airportA.description}})</span></strong> to <strong>{{airportB.title}} <span ng-hide="airPortB.description == null">({{airportB.description}})</span></strong> is <strong>{{distanceResult}} nautical mile</strong></p>
                 </div>
-                <div id="mapCanvas" class="col-xs-12">
+    <!-- Google Map will display here -->
+                <div id="mapCanvas" class="col-xs-12" ng-show="distanceResult != null && airportA.title != null && airportB.title != null">
                     <ui-gmap-google-map center='map.center' zoom='map.zoom'>
                         <ui-gmap-polyline ng-repeat="p in polylines" path="p.path" stroke="p.stroke" visible="p.visible" geodesic="p.geodesic" fit="p.fit" icons="p.icons"></ui-gmap-polyline>
                     </ui-gmap-google-map>

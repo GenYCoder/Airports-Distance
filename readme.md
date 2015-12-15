@@ -1,27 +1,30 @@
-## Laravel PHP Framework
+## Airport Distance Measuring Web App
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+This web application measures the distance of two airports in the United States. It contains all the airports in that country. The data is call through an API on laravel which populates the autocomplete. If the row exists Google Map will plot the two location in a polyline. 
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+##Installation Guide
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+1) Install Composer
 
-## Official Documentation
+2) Install VirtualBox & Vagrant (http://laravel.com/docs/4.2/homestead#installation-and-setup)
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+This video will contain information on how to setup VirtualBox, Vagrant, and Homestead (https://laracasts.com/series/laravel-5-fundamentals/episodes/2)
 
-## Contributing
+3) After setting up, map the folder called Moat. If you do not have homestad.yaml file you can run homestead init then run homestead edit to make configurations. It should focus on the folders and sites field. 
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+4) homestead up
 
-## Security Vulnerabilities
+5) Create a database name called Flights and import the mysql file 
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+6) npm install
 
-### License
+7) composer install
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+6) You should be up and running
+
+
+##How to use
+
+Type in an airport name in the from input field. An autocomplete should appear giving you suggested airports. After making your selection, type in an airport name for the To input field. This will show the nautical miles plus a polyline on google map. 
+
+
