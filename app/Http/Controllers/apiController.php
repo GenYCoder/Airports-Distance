@@ -27,6 +27,7 @@ class apiController extends Controller
 					->get();
 			
 		}
-	}
+	}	
+
 
 }
