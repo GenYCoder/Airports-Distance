@@ -43,6 +43,8 @@ angular.module("airportApp", ["angucomplete-alt", "uiGmapgoogle-maps"])
                     zoom: 4
                 };
 
+                google.maps.event.trigger($scope.map,'resize');
+
 
                 //plotting the line between the two airports
                 uiGmapGoogleMapApi.then(function() {
